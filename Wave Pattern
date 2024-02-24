@@ -1,0 +1,32 @@
+Write a C program that modifies a given array in a wave pattern and prints the resulting array. The wave pattern requires that the previous element in the array must be greater than the next element, and the next element must be greater than the previous element.
+
+For example, consider the input array arr = {1, 2, 3, 4, 5}
+
+resulting in the array 2 1 4 3 5.
+
+Answer:
+
+#include<stdio.h>
+int main(){
+    int i,n;
+    printf("Enter the size of array:");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter %d elements:",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<=n-1;i++)
+    {
+        if(a[i]>a[i+1]) printf(" %d %d",a[i],a[i+1]);
+        else printf(" %d %d",a[i+1],a[i]);
+        i=i+1;
+    }
+    if(n%2==1)
+    printf("\b ");
+    else;
+    
+    
+return 0;    
+}
