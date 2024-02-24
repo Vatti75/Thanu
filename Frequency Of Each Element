@@ -1,0 +1,65 @@
+Write a program in C to count the frequency of each element of an array.
+
+Test Data :
+
+Input the number of elements to be stored in the array :6
+
+Input 6 elements in the array :
+
+element - 0 : 25
+
+element - 1 : 12
+
+element - 2 : 43
+
+element - 3 : 43
+
+element - 4 : 25
+
+element - 5 : 15
+
+Expected Output :
+
+The frequency of all elements of an array :
+
+25 occurs 2 times
+
+12 occurs 1 times
+
+43 occurs 2 times
+
+15 occurs 1 times
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    int n,i,j,c;
+    printf("Input the number of elements to be stored in the array:");
+    scanf("%d",&n);
+    printf("Input %d elements in the array:\n",n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+       printf("element - %d: ",i);
+       scanf("%d",&a[i]);
+    }
+    printf("The frequency of all elements of an array:\n");
+    int temp[n];
+    for(i=0;i<n;i++)
+    {
+        if(temp[i]==-1) continue;
+        
+        for(c=1,j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+            c++;
+            temp[j]=-1;
+            }
+        }
+        printf("%d occurs %d times\n",a[i],c);
+    }
+    
+return 0;    
+}
