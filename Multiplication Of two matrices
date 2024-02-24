@@ -1,0 +1,110 @@
+Write a program in C for multiplication of two square Matrices. 
+
+Test Data : 
+
+Input the rows and columns of first matrix : 2 2 
+
+Input the rows and columns of second matrix : 2 2 
+
+Input elements in the first matrix : 
+
+element - [0],[0] : 1 
+
+element - [0],[1] : 2 
+
+element - [1],[0] : 3 
+
+element - [1],[1] : 4 
+
+Input elements in the second matrix : 
+
+element - [0],[0] : 5 
+
+element - [0],[1] : 6 
+
+element - [1],[0] : 7 
+
+element - [1],[1] : 8 
+
+Expected Output : 
+
+The First matrix is : 
+
+1 2 
+
+3 4 
+
+The Second matrix is : 
+
+5 6 
+
+7 8 
+
+The multiplication of two matrix is : 
+
+19 22
+
+ 43 50 
+
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    int i,j,r,c,s,k;
+    printf("Input the rows and columns of first matrix : ");
+    scanf("%d %d",&r ,&c);
+    printf("Input the rows and columns of first matrix : %d %d\n",r,c);
+    int a[r][c];
+    printf("Input elements in the first matrix:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("element -[%d][%d]: ",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    int b[r][c];
+    printf("Input elements in the second matrix:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("element -[%d][%d]: ",i,j);
+            scanf("%d",&b[i][j]);
+        }
+    }
+    printf("The First matrix is:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("The Second matrix is:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
+    printf("The multiplcation of two matrix is:\n");
+    for(i=0;i<r;i++)
+    {
+        for(s=j=0;j<c;j++)
+        {
+            for(s=k=0;k<c;k++)
+            {
+            s+=a[i][k]*b[k][j];
+            }
+            printf("%d ",s);
+        }
+        printf("\n");
+    }    
+return 0;    
+}
