@@ -1,0 +1,58 @@
+Write a program in C to sort the array in descending order.
+
+Input the number of elements to be stored in the array :6
+
+Input 6 elements in the array :
+
+element - 0 : 5
+
+element - 1 : 1
+
+element - 2 : 1
+
+element - 3 : 6
+
+element - 4 : 3
+
+element - 5 : 5
+
+.....................
+
+
+
+Expected Output :
+
+After sorting in descending order : 6 5 5 3 1 1
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    int a[100],i,j,n,t;
+    printf("Input the number of elements to be stored in the array :");
+    scanf("%d",&n);
+    printf("Input %d elements in the array :\n",n);
+    for(i=0;i<n;i++)
+    {
+    
+       printf("Enter %d elements:",i);
+       scanf("%d",&a[i]);
+    }
+    for(i=0;i<=n-2;i++)
+    {
+        for(j=i+1;j<=n-1;j++)
+        {
+            if(a[i]<a[j])
+            {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+    printf("\nAfter sorting in descending order:\n");
+    for(i=0;i<n;i++)
+    printf("%d ",a[i]);
+    
+return 0;    
+}
