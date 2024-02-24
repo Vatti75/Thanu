@@ -1,0 +1,49 @@
+Write a program in C to find the second smallest element in an array. 
+
+Test Data :
+
+Input the size of array : 5
+
+Input 5 elements in the array (value must be <9999) :
+
+element - 0 : 0
+
+element - 1 : 9
+
+element - 2 : 4
+
+element - 3 : 6
+
+element - 4 : 5
+
+Expected Output :
+
+The Second smallest element in the array is : 4
+
+Answer:
+
+#include<stdio.h>
+int main(){
+    int a[100],i,n,t,j;
+    printf("Input the size of array:");
+    scanf("%d",&n);
+    printf("Input 5 elements in the array (value must be <9999) :\n");
+    for(i=0;i<n;i++)
+    {
+        printf("element - %d: ",i);
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<=n-1;j++)
+        {
+         if(a[i]>a[j])
+         {
+             t=a[i];a[i]=a[j];a[j]=t;
+         }
+        }
+    }
+    printf("The Second smallest element in the array is:%d",a[1]);
+    
+return 0;    
+}
