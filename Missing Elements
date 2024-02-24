@@ -1,0 +1,47 @@
+Write a C program to find and print all the missing elements that are not present in a given array. Given an array of integers, your task is to identify and print all the numbers that are missing within a specified range.
+
+For example:
+
+given the input array arr = [1, 4, 7, 12, 17] 
+
+Expected output as : 2 3 5 6 8 9 10 11 13 14 15 16
+
+Answer:
+
+#include<stdio.h>
+int main(){
+    int n,i,j,t;
+    printf("enter the size of array:");
+    scanf("%d",&n);
+    int a[n];
+    printf("given the input array arr=");
+    for(i=0;i<n;i++)
+    {
+       scanf("%d",&a[i]); 
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<=n-1;j++)
+        {
+            if(a[i]>a[j])
+            {
+             t=a[i];
+             a[i]=a[j];
+             a[j]=t;
+            }
+        }
+    }
+    j=1;
+    for(i=0;i<n;i++)
+    {
+        for(;j<=a[i];j++)
+        {
+            if(a[i]!=j)
+            printf("%d ",j);
+            else j++;
+        }
+        
+    }     
+return 0;    
+}
+
