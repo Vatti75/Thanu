@@ -1,0 +1,81 @@
+Write a program in C to find sum of rows an columns of a Matrix. 
+
+Test Data : 
+
+Input the size of the square matrix : 2 
+
+Input elements in the first matrix : 
+
+element - [0],[0] : 5 
+
+element - [0],[1] : 6 
+
+element - [1],[0] : 7 
+
+element - [1],[1] : 8 
+
+Expected Output : 
+
+The First matrix is : 
+
+The matrix is : 
+
+5 6 
+
+7 8 
+
+The sum or rows and columns of the matrix is : 
+
+5     6 11 
+
+7     8 15 
+
+12 14 
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    int r,c,nr,a[10][10];
+        printf("Input the size of the square matrix :");
+        scanf("%d",&nr);
+        int nc;
+    nc=nr;
+    
+            for(r=0;r<nr;r++)
+            {
+                for(c=0;c<nc;c++)
+                {
+                    printf("element-[%d][%d]:",r,c);
+                    scanf("%d",&a[r][c]);
+                }
+            }
+        printf("The First matrix is:\n");
+        printf("The matrix is:\n");
+    int sr,sc;
+            for(r=0;r<nr;r++)
+            {
+                
+                for(c=sr=sc=0;c<nc;c++)
+                {
+                    sr+=a[r][c];
+                    sc+=a[c][r];
+                }
+                a[r][c]=sr;
+                a[c][r]=sc;
+            
+            }
+            for(r=0;r<=nr;r++)
+            {
+                for(c=0;c<=nc;c++)
+                {
+                    if((r+c)==(nr+nc)) printf(" ");
+                    else
+                    printf("%4d ",a[r][c]);
+                }
+                printf("\n");
+            }
+        
+            
+return 0;   
+}
