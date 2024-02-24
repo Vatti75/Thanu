@@ -1,0 +1,58 @@
+Write a program in C to delete an element at desired position from an array. 
+
+
+
+Test Data : 
+
+Input the size of array : 5 
+
+Input 5 elements in the array in ascending order: 
+
+element - 0 : 1 
+
+element - 1 : 2 
+
+element - 2 : 3 
+
+element - 3 : 4 
+
+element - 4 : 5 
+
+
+
+Input the position which to delete: 3 
+
+Expected Output : 
+
+The new list is : 1 2 4 5 
+
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    int i,n,ele,j;
+    printf("Input the size of array:");
+    scanf("%d",&n);
+    printf("Input %d elements in the array in ascending order:\n",n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        printf("element - %d: ",i);
+        scanf("%d",&a[i]);
+    }
+    printf("Input the position which to delete:");
+    scanf("%d",&ele);
+    printf("The new list is:\n");
+    for(i=0;i<n;i++)
+    {
+        if(i==ele)
+        for(n--,j=i;j<n;j++)
+        a[j]=a[j+1];
+    }
+    for(i=0;i<n;i++)
+    printf("%d ",a[i]);
+    
+
+return 0;    
+}
