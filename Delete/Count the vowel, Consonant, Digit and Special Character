@@ -1,0 +1,42 @@
+Write a C program to count the Count the vowel, Consonant, Digit and Special Character in a given String .
+
+Input as : 
+
+Enter a String : Nareshit @123
+
+Output as :
+
+Vowel count is : 3
+
+Consonant count is : 5
+
+Digit count is : 3
+
+Special Character count is : 1
+
+Answer:
+
+#include<stdio.h>
+int main() {
+    char s[30];
+    int i,sp,c,d,v,space;
+        printf("Enter a String:");
+        gets(s);
+        int l=strlen(s);
+            for(i=0;i<l;i++)
+            {
+                if(s[i]>='a' && s[i]<='z') s[i]-=32;
+                
+                         if(s[i]>='A' && s[i]<='Z')
+                         {
+                            if(s[i]=='O' || s[i]=='A' || s[i]=='E' || s[i]=='I' || s[i]=='U') 
+                             v++;
+                            else c++;
+                         }
+                else if(s[i]>='0' && s[i]<='9') d++;
+                else if(s[i]==' ')space++;
+                else sp++;
+            }
+        printf("Vowel count is: %d\nConsonant count is:%d \nDigit count is:%d\nSpecial Character count is:%d",v,c,d,sp);
+return 0;    
+}
